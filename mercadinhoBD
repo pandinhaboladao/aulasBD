@@ -1,0 +1,34 @@
+create database mercado;
+
+CREATE table cliente(
+nome varchar(150),
+cpf int(11),
+data_nasc date
+);
+
+create table funcionario(
+nome varchar(150),
+cadastro integer
+);
+
+create table venda(
+codigo_de_venda integer,
+produto integer,
+nota_fiscal integer
+);
+
+insert into cliente (nome, cpf, data_nasc) values ("joao", "56412378", "1999/05/24");
+insert into cliente (nome, cpf, data_nasc) values ("joao", "56412378", "1999/05/24");
+insert into cliente (nome, cpf, data_nasc) values ("joao", "56412378", "1999/05/24");
+
+insert into funcionario (nome, cadastro) values ("vitor", "68736211");
+insert into funcionario (nome, cadastro) values ("vitor", "68736211");
+insert into funcionario (nome, cadastro) values ("vitor", "68736211");
+
+insert into venda (codigo_de_venda, produto, nota_fiscal) values ("8923", "90009", "278128321");
+insert into venda (codigo_de_venda, produto, nota_fiscal) values ("8923", "90009", "278128321");
+insert into venda (codigo_de_venda, produto, nota_fiscal) values ("8923", "90009", "278128321");
+
+select*from cliente;
+select*from funcionario;
+select*from venda;
