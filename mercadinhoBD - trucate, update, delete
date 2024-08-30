@@ -1,0 +1,53 @@
+create database mercado;
+
+create table cliente(
+codigo_cliente int primary key not null,
+nome varchar(150),
+cpf int,
+celular numeric
+);
+
+create table funcionario(
+codigo_funcionario int primary key not null,
+nome varchar (150),
+cpf int,
+celular numeric,
+cargo varchar (50)
+);
+
+create table venda(
+codigo_venda int primary key not null,
+produto varchar(150),
+nota_fiscal int,
+valor_total numeric(10,2)
+);
+
+alter table cliente change celular celular int;
+alter table funcionario change celular celular int;
+
+insert into cliente (codigo_cliente, nome, cpf, celular) values ("0", "Vitor", "3789273", "1112332");
+insert into cliente (codigo_cliente, nome, cpf, celular) values ("1", "Lissandra", "897532", "0000010"),
+("2", "Higor", "989483", "999878");
+
+insert into cliente (codigo_cliente, nome, cpf, celular) values ("3", "Chupixani", "1112223", "434353535");
+
+insert into funcionario (codigo_funcionario, nome, cpf, celular, cargo) values ("0", "Thomás Turbando", "32323434", "2342424545", "Gerente");
+insert into funcionario (codigo_funcionario, nome, cpf, celular, cargo) values ("1", "Deide Costa", "99912341", "111039", "Caixa");
+insert into funcionario (codigo_funcionario, nome, cpf, celular, cargo) values ("2", "Yasmin Asbolla", "978674", "992832", "Fiscal");
+insert into funcionario (codigo_funcionario, nome, cpf, celular, cargo) values ("3", "Giuseppe Cadura", "3245352", "9876124", "Caixa");
+
+
+insert into venda (codigo_venda, produto, nota_fiscal, valor_total) values (0, "Shampoo do Shrek", "1111989", "16,80");
+
+update funcionario set celular="2732732" where codigo_funcionario = 0;
+
+update cliente set celular="898594" where codigo_cliente = 2;
+update cliente set celular="900342" where codigo_cliente = 1;
+
+describe cliente;
+describe funcionario;
+describe venda;
+
+select*from cliente;
+select*from funcionario;
+select*from venda;
